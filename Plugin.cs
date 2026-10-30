@@ -6,7 +6,7 @@ namespace TGPFixIsolationTest
     [BepInPlugin(
         "ben.tgp.communityfixes",
         "TGP Community Fixes",
-        "0.0.1")]
+        "1.0.0")]
     public class Plugin : BaseUnityPlugin
     {
         private void Awake()

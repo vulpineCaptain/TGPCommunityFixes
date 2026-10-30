@@ -59,7 +59,7 @@ After launching the game, open the BepInEx console or log file.
 You should see a message similar to:
 
 ```text
-Loading [TGP Community Fixes 0.0.1]
+Loading [TGP Community Fixes 1.0.0]
 ```
 
 The displayed version will depend on the release build.
