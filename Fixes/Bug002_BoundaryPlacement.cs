@@ -5,7 +5,7 @@ using HarmonyLib;
 using Mirror;
 using UnityEngine;
 
-namespace BenMods.Fixes
+namespace TGPCommunityFixes.Fixes
 {
     // Bug 0002:
     // Prevent furniture from initially spawning with a footprint
@@ -16,11 +16,11 @@ namespace BenMods.Fixes
     // inside QuadTreeCommon.Remove().
 
     [HarmonyPatch]
-    internal static class FurniturePlacementFix
+    internal static class Bug002_BoundaryPlacement
     {
         private const int MinCoord = -30;
         private const int MaxCoord = 30;
-        private const string LogPrefix = "[BenMods][Bug0002] ";
+        private const string LogPrefix = "[TGPCommunityFixes][Bug002]";
 
         private static MethodBase TargetMethod()
         {

@@ -2,10 +2,10 @@
 using HarmonyLib;
 using UnityEngine;
 
-namespace BenMods.Debugging
+namespace TGPCommunityFixes.Fixes
 {
     [HarmonyPatch(typeof(Furniture), "CheckOccupied")]
-    internal static class FurnitureCollisionVisibilityPatch
+    internal static class Bug001_FurnitureVisibility
     {
         [HarmonyPostfix]
         private static void Postfix(Furniture __instance)

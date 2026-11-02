@@ -32,6 +32,11 @@
       <Private>false</Private>
     </Reference>
 
+    <Reference Include="UnityEngine.UI">
+      <HintPath>$(TGPGameDir)\The Genesis Project_Data\Managed\UnityEngine.UI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
     <Reference Include="UnityEngine">
       <HintPath>$(TGPGameDir)\The Genesis Project_Data\Managed\UnityEngine.dll</HintPath>
       <Private>false</Private>

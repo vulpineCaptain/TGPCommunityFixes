@@ -6,9 +6,9 @@ This mod aims to fix gameplay bugs while preserving the game's original behavior
 
 ## Current Version
 
-**v1.0.0 — Initial Release**
+**v1.1.0 — Load Session Improvements**
 
-Two fixes included.
+Three fixes included.
 
 ### Bugfix 0001 — Deployable Furniture Disappearing Between Floors
 
@@ -25,6 +25,14 @@ In some cases, this error could disrupt the network session or disconnect the pl
 **Fix:** Adjusts the initial spawn coordinates of floor furniture to ensure its full footprint fits within the supported building area.
 
 This prevents the furniture from entering the quadtree in an invalid initial position. The game's existing placement validation continues to handle subsequent invalid moves.
+
+### Bugfix 0003 — Load Session Dropdown Usability
+
+**Problem:** The Load Session dropdown displayed only a small number of entries at once and scrolled so slowly that navigating a large list of saved sessions was difficult.
+
+**Fix:** Increases mouse-wheel scroll sensitivity and expands the dropdown to display more entries at once, up to a configurable limit.
+
+The dropdown automatically shrinks when fewer entries are available. Both the scroll sensitivity and maximum number of visible rows can be adjusted through BepInEx configuration.
 
 ## Requirements
 
@@ -50,8 +58,6 @@ The Genesis Project/
             └── TGPCommunityFixes.dll
 ```
 
-**Do not install multiple copies of this mod.**
-
 ## Verifying Installation
 
 After launching the game, open the BepInEx console or log file.
@@ -59,21 +65,28 @@ After launching the game, open the BepInEx console or log file.
 You should see a message similar to:
 
 ```text
-Loading [TGP Community Fixes 1.0.0]
+Loading [TGP Community Fixes 1.1.0]
 ```
 
 The displayed version will depend on the release build.
 
+## Configuration
+
+Bugfix 0003 settings are available in `BepInEx/config/vulpinecaptain.tgp.communityfixes.cfg` after launching the game.
+
+- `ScrollSensitivity` — defaults to `25`; supported range: `1` to `200`.
+- `MaxVisibleRows` — defaults to `12`; supported range: `2` to `20`.
+
+The dropdown grows with the number of available entries, up to the configured row limit and a maximum height of 400 UI units. Changes to the configuration take effect after restarting the game.
+
 ## Compatibility
 
-- Designed to work independently of BenMods.
-- Tested with BenMods installed alongside it, with the corresponding fixes removed from BenMods to avoid duplicate Harmony patches.
 - Other mods that modify furniture placement, building occupancy checks, or furniture visibility may conflict.
 - Compatibility with other game versions has not been verified.
 
 ## Multiplayer
 
-Both fixes have been tested in multiplayer during development.
+Bugfixes 0001 and 0002 have been tested in multiplayer during development.
 
 Client-side behavior and compatibility with mixed mod installations have not been exhaustively tested.
 
@@ -87,7 +100,6 @@ The mod does not add custom items or assets. It modifies game behavior at runtim
 
 - Bugfix 0002 prevents invalid *initial* furniture placement; it does not expand the game's building area or make out-of-bounds placement valid.
 - Rapid repeated placement inputs near building boundaries may occasionally result in a valid placement at the edge rather than an invalid placement being discarded.
-- Additional bugs may exist outside the scope of these fixes.
 
 ## Reporting Bugs
 
@@ -100,6 +112,12 @@ When reporting a problem, please include:
 - Relevant BepInEx console output or `LogOutput.log` entries
 
 ## Changelog
+
+### v1.1.0
+
+Load Session improvements.
+
+- **0003:** Improved Load Session dropdown scrolling and automatically adjusted its height for larger save lists. Added configurable scroll sensitivity and maximum visible rows.
 
 ### v1.0.0
 
